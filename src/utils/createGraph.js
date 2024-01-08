@@ -1,7 +1,7 @@
-export function createGraph() {
-  const graf = document.getElementById('stats');
-  let ctx = graf.getContext('2d');
-  const width = graf.width;
+export function createGraph(stats) {
+  const graph = document.getElementById('stats');
+  let ctx = graph.getContext('2d');
+  const width = graph.width;
   const k = 5 / 6;
   const l = 1 / 6;
   const radius = width / 2;
@@ -22,7 +22,8 @@ export function createGraph() {
     );
   };
 
-  const stat = { INF: 6, A: 5, B: 4, C: 3, D: 2, E: 1, F: 0 };
+  const stat = { INF: 6, A: 5, B: 4, C: 3, D: 2, E: 1, F: 0.5 };
+  const numericStats = stats.map((letter) => stat[letter] || 0);
 
   // Oси
   ctx.beginPath();
@@ -48,6 +49,7 @@ export function createGraph() {
 
   // points
   for (let j of Object.values(stat)) {
+    if (j === 0.5) continue;
     for (let i = 0; i <= 6; i++) {
       ctx.fillRect(countX(i, j), countY(i, j), 3, 3);
     }
@@ -55,13 +57,13 @@ export function createGraph() {
 
   // Graph
   ctx.beginPath();
-  ctx.fillStyle = 'rgba(150, 255, 0, 0.25)';
-  ctx.moveTo(countX(3, 0), countY(3, 0));
-  ctx.lineTo(countX(2, 2), countY(2, 2));
-  ctx.lineTo(countX(1, 0), countY(1, 0));
-  ctx.lineTo(countX(6, 5), countY(6, 5));
-  ctx.lineTo(countX(5, 0), countY(5, 0));
-  ctx.lineTo(countX(4, 0), countY(4, 0));
+  ctx.fillStyle = 'rgba(205, 25, 99, 0.25)';
+  ctx.moveTo(countX(3, numericStats[0]), countY(3, numericStats[0]));
+  ctx.lineTo(countX(2, numericStats[1]), countY(2, numericStats[1]));
+  ctx.lineTo(countX(1, numericStats[2]), countY(1, numericStats[2]));
+  ctx.lineTo(countX(6, numericStats[3]), countY(6, numericStats[3]));
+  ctx.lineTo(countX(5, numericStats[4]), countY(5, numericStats[4]));
+  ctx.lineTo(countX(4, numericStats[5]), countY(4, numericStats[5]));
   ctx.fill();
   ctx.closePath();
 

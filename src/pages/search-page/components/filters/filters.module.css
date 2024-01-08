@@ -1,0 +1,41 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) repeat(1, 35px);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.reset {
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset:hover {
+  border: 1px solid #cd1963;
+  color: #cd1963;
+}
+
+.reset:active {
+  border: 1px solid #cd1963;
+  color: #cd1963;
+}
+
+@media screen and (max-width: 480px) {
+  .cards {
+    justify-content: space-around;
+  }
+  .filters {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}

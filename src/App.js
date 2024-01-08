@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react';
-import { createGraph } from './createGraph';
-import Router from './components/ui/Router';
+import React from 'react';
+import Router from './components/router/Router';
 
 function App() {
-  // useEffect(() => {
-  //   createGraph();
-  // }, []);
-
   return (
-    <div>
-      <div className="container">
-        <Router />
-      </div>
+    <div className="container">
+      <Router />
     </div>
   );
 }

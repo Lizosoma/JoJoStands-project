@@ -1,0 +1,47 @@
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  background: url(../../assets/images/selectArrow.svg) no-repeat;
+  background-position: 90% center;
+}
+
+.select:hover {
+  border: 1px solid #cd1963;
+  color: #cd1963;
+  background: url(../../assets/images/pinkSelectArrow.svg) no-repeat;
+  background-position: 90% center;
+}
+
+.select:focus {
+  border: 1px solid #cd1963;
+  color: #cd1963;
+  background: url(../../assets/images/pinkSelectArrow.svg) no-repeat;
+  background-position: 90% center;
+}
+
+.option {
+  background-color: #ffcbcb;
+  border: 1px solid #cd1963;
+}
+
+@media screen and (max-width: 768px) {
+  .select {
+    text-align: start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .select {
+    text-align: center;
+  }
+}

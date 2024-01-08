@@ -1,0 +1,64 @@
+.favoritesIcon {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.favorites {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.count {
+  position: absolute;
+  top: 8px;
+  right: 4.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  background: #fff;
+  border: 1px solid #cd1963;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .favoritesIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .count {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    top: 6px;
+    right: 3.5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .favoritesIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .count {
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
+    top: 4px;
+    right: 2.5px;
+  }
+}
