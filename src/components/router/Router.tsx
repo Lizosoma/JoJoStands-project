@@ -35,7 +35,7 @@ const Router = () => {
   };
 
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Header isLoggedIn={isLoggedIn} user={user} onSignOut={handleSignOut} />
       <Routes>
         <Route path="/" element={<Main />} />

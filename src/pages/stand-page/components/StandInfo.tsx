@@ -14,6 +14,7 @@ interface StandInfoProps {
 }
 
 const StandInfo: React.FC<StandInfoProps> = ({ stand, standFavorite, setStandFavorite }) => {
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
   const dispatch = useDispatch();
 
   const dispatchFavoriteStand = () => {
@@ -35,7 +36,9 @@ const StandInfo: React.FC<StandInfoProps> = ({ stand, standFavorite, setStandFav
   return (
     <div className={styles.standInfo}>
       <div className={styles.heart}>
-        <img src={standFavorite ? liked : like} alt="heart" onClick={dispatchFavoriteStand} />
+        {isLoggedIn && (
+          <img src={standFavorite ? liked : like} alt="heart" onClick={dispatchFavoriteStand} />
+        )}
         <h2 className={styles.standName}>{stand.name}</h2>
       </div>
       <StandStats stand={stand} />

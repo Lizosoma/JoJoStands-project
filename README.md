@@ -2,6 +2,10 @@
 
 JoJoStands is a web application that serves as a collection of stands from the popular anime "JoJo's Bizarre Adventure". Users can browse stand cards, get detailed information about each one, and search and filter stands based on various criteria. Registered users have the ability to add stands to their favorites.
 
+## Deploy
+
+https://lizosoma.github.io/JoJoStands-project/
+
 ## Features
 
 - Browse stand cards from "JoJo's Bizarre Adventure"

@@ -8,15 +8,15 @@ module.exports = {
     main: path.resolve(__dirname, './src/index.tsx'),
   },
   output: {
-    publicPath: '/',
-    path: path.resolve(__dirname, './dist'),
+    publicPath: './',
+    path: path.resolve(__dirname, './build'),
     filename: '[name].bundle.js',
   },
   mode: 'development',
   devServer: {
     historyApiFallback: true,
     static: {
-      directory: path.resolve(__dirname, './dist'),
+      directory: path.resolve(__dirname, './build'),
       watch: true,
     },
     open: true,
