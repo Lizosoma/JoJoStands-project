@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:4200';
+const BASE_URL = 'https://probe-db-vercel.vercel.app';
 export const StandsService = {
   getAll: async () => {
     try {
