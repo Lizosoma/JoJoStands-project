@@ -2,6 +2,138 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  /* border: none; */
+  border: none;
   color: inherit;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Geometria', sans-serif;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src:
+    local('Geometria-Regular'),
+    url('../../Fonts/Geometria-Regular.woff2') format('woff2'),
+    url('../../Fonts/Geometria-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src:
+    local('Geometria-ExtraBold'),
+    url('../../Fonts/Geometria-ExtraBold.woff2') format('woff2'),
+    url('../../Fonts/Geometria-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* light theme */
+
+  --white-color-light: #ffffff;
+  --pink-color-light: #cd1963;
+  --light-pink-color-light: #ffcbcb;
+  --black-color-light: #000000;
+  --grey-color-light: #d6d6d6;
+  --light-grey-color-light: #efefef;
+  --dark-grey-color-light: #8d8d8d;
+  --red-color-light: red;
+
+  /* dark theme
+
+  --white-color-dark: #000000;
+  --pink-color-dark: #ffcbcb;
+  --light-pink-color-dark: #cd1963;
+  --black-color-dark: #ffffff;
+  --grey-color-dark: #d6d6d6;
+  --light-grey-color-dark: #efefef;
+  --dark-grey-color-dark: #8d8d8d;
+  --red-color-dark: red; */
+}
+
+body {
+  --white-color: var(--white-color-light);
+  --pink-color: var(--pink-color-light);
+  --light-pink-color: var(--light-pink-color-light);
+  --black-color: var(--black-color-light);
+  --grey-color: var(--grey-color-light);
+  --light-grey-color: var(--light-grey-color-light);
+  --dark-grey-color: var(--dark-grey-color-light);
+  --red-color: var(--red-color-light);
+}
+
+/* [data-theme='dark'] {
+  --white-color: var(--white-color-dark);
+  --pink-color: var(--pink-color-dark);
+  --light-pink-color: var(--light-pink-color-dark);
+  --black-color: var(--black-color-dark);
+  --grey-color: var(--grey-color-dark);
+  --light-grey-color: var(--light-grey-color-dark);
+  --dark-grey-color: var(--dark-grey-color-dark);
+  --red-color: var(--red-color-dark);
+} */
+
+input:focus {
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+body {
+  background-color: var(--white-color);
+  font-size: 1rem;
+  color: var(--black-color);
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 30px;
+}
+
+.noMessage {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: small;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: xx-small;
+  }
+
+  .cards {
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

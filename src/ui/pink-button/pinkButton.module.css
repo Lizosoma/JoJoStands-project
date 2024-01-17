@@ -1,0 +1,26 @@
+.button {
+  background-color: var(--white-color);
+  padding: 1vw 4vw;
+  outline: 1px solid var(--black-color);
+  transition: background-color 0.5s ease;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: var(--pink-color);
+  color: var(--white-color);
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    font-size: small;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .button {
+    font-size: xx-small;
+  }
+}

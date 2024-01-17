@@ -5,17 +5,18 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, './src/index.js'),
+    main: path.resolve(__dirname, './src/index.tsx'),
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    publicPath: './',
+    path: path.resolve(__dirname, './build'),
     filename: '[name].bundle.js',
   },
   mode: 'development',
   devServer: {
     historyApiFallback: true,
     static: {
-      directory: path.resolve(__dirname, './dist'),
+      directory: path.resolve(__dirname, './build'),
       watch: true,
     },
     open: true,
@@ -39,14 +40,25 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.svg$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name][hash][ext][query]',
+        },
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    alias: {
+      src: path.resolve(__dirname, './src'),
+    },
+    extensions: ['.js', '.jsx', '.json', '.tsx', '.ts'],
   },
   plugins: [
     new HtmlWebpackPlugin({

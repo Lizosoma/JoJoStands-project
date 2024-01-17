@@ -1,0 +1,61 @@
+.filters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) repeat(1, 0.45fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.reset,
+.search {
+  border: 1px solid var(--black-color);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  background-image: url(../../../../assets/images/search.svg);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.reset:hover {
+  border: 1px solid var(--pink-color);
+  color: var(--pink-color);
+}
+
+.reset:active {
+  border: 1px solid var(--pink-color);
+  color: var(--pink-color);
+}
+
+.search:hover {
+  border: 1px solid var(--pink-color);
+  background-image: url(../../../../assets/images/pinkSearch.svg);
+}
+
+@media screen and (max-width: 768px) {
+  .filters {
+    grid-template-columns: repeat(5, 1fr) repeat(1, 0.7fr);
+    gap: 10px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

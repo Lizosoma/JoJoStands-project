@@ -1,0 +1,7 @@
+.pageItem {
+  margin-right: 16px;
+}
+
+.pageItem:last-child {
+  margin-right: 0;
+}
