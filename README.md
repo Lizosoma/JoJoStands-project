@@ -25,3 +25,7 @@ This project was developed using:
 ## Note
 
 All images and information about the stands were taken from [JoJo's Bizarre Encyclopedia](https://jojowiki.com/JoJo_Wiki). The use of these materials in this project is not for commercial gain and is carried out under fair use for a non-commercial, fan-made web application.
+
+## Acknowledgments
+
+Special thanks to [Dotreign](https://github.com/Dotreign) for assistance with the deployment of the JoJoStands project.
